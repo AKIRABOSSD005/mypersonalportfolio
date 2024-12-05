@@ -2,33 +2,91 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Soft black navbar */
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* navbar */
 .navbar {
     background-color: #1a1a1a;
 }
 
-/* Override navbar toggle button icon color */
 .navbar-toggler-icon {
     background-color: #ffffff;
     border: none;
     border-radius: 5px;
 }
 
-/* Remove black border from the navbar-toggler button */
 .navbar-toggler {
     border: none;
 }
 
-/* White text for navbar links */
-.navbar .nav-link {
+/* Apply the navbar styles with higher specificity to override Bootstrap defaults */
+.navbar-nav .nav-link {
+    font-family: "Roboto Slab", serif;
+    color: #ffffff !important;
+    position: relative;
+    padding: 10px 25px !important; /* Ensure padding is applied */
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for oblong background */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #1a1a1a;
+    background-color: #6e6e6e;
+    border-radius: 30px;
+}
+
+/* Ensure the oblong background fits well around the text */
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #6e6e6e;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+#full-name, #initials {
+    font-family: "Roboto Slab", serif;
     color: #ffffff;
 }
 
-/* Optionally, make the active link bold or highlighted */
-.navbar .nav-link.active {
-    font-weight: bold;
-    color: #ffffff;
+@media (max-width: 768px) {
+    #initials {
+        font-size: 1.5rem;
+    }
+
+    /* Center the navbar items on small screens */
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%; /* Make each nav item full-width for small screens */
+    }
 }
+
+#full-name {
+    font-size: 2rem;
+}
+
+/* Align navbar items to the right for large screens */
+@media (min-width: 992px) {
+    .navbar-nav {
+        justify-content: flex-end;
+    }
+}
+
+
 
 /* Centering the name and making it large with a nice font */
 .name-container {
@@ -96,6 +154,7 @@ body {
     background-color: #f8f8f8;
     /* Optional background color */
 }
+
 
 /* Center the section title */
 .section-title-projects {
@@ -389,10 +448,11 @@ body {
 }
 
 #resume .section-title-projects {
-    font-size: 3rem;
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
     color: #333;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #resume .text-muted {

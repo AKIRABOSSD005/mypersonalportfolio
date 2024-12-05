@@ -21,37 +21,42 @@
     <div class="wrapper mb-5">
         <nav class="navbar navbar-expand-lg mb-5 sticky-top">
             <div class="container">
-                <a class="navbar-brand text-light fw-bold" href="index.html">Portfolio</a>
+                <a class="navbar-brand text-light fw-bold" href="index.html">
+                    <span class="d-none d-sm-inline" id="full-name">Earl Gerald Domingo</span>
+                    <span class="d-inline d-sm-none" id="initials">EGD</span>
+                </a>
+        
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+        
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-evenly w-50">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 w-100 justify-content-evenly justify-content-center  justify-content-lg-end flex-wrap flex-lg-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link text-light active" aria-current="page" href="#home">Home</a>
+                            <a class="nav-link text-light active" aria-current="page" id="home-nav" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#about">About</a>
+                            <a class="nav-link text-light active" aria-current="page" id="about-nav" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#projects">Projects</a>
+                            <a class="nav-link text-light active" aria-current="page" id="projects-nav" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#skills">Skills</a>
+                            <a class="nav-link text-light active" aria-current="page" id="skills-nav" href="#skills">Skills</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#resume">Resume</a>
+                            <a class="nav-link text-light active" aria-current="page" id="resume-nav" href="#resume">Resume</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#contact">Contact</a>
+                            <a class="nav-link text-light active" aria-current="page" id="contact-nav" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <br />
+
         <main>
             <!-- home -->
             <div class="container d-flex justify-content-center my-5" style="min-height: 100vh" id="home">
@@ -235,8 +240,7 @@
                 <div class="row justify-content-center">
                     <!-- Title Section -->
                     <div class="col-12 text-center mb-5">
-                        <h1 class="section-title-projects"
-                            style="font-size: 3rem; color: #333; font-family: 'Roboto', sans-serif;">Resume</h1>
+                        <h1 class="section-title-projects">Resume</h1>
                         <p class="text-muted"
                             style="font-size: 1.25rem; font-weight: 400; max-width: 700px; margin: auto;">
                             Explore my detailed resume, view it online, or download it for further review. I'm happy to
@@ -384,6 +388,8 @@
     </div>
 
     <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="assets/style.js"></script>
+
 </body>
 
 </html>
