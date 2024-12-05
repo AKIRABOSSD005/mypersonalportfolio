@@ -1,0 +1,689 @@
+body {
+    background-color: #f5f5f5;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* navbar */
+.navbar {
+    background-color: #1a1a1a;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* Apply the navbar styles with higher specificity to override Bootstrap defaults */
+.navbar-nav .nav-link {
+    font-family: "Roboto Slab", serif;
+    color: #ffffff !important;
+    position: relative;
+    padding: 10px 25px !important; /* Ensure padding is applied */
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for oblong background */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #1a1a1a;
+    background-color: #6e6e6e;
+    border-radius: 30px;
+}
+
+/* Ensure the oblong background fits well around the text */
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #6e6e6e;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+#full-name, #initials {
+    font-family: "Roboto Slab", serif;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    #initials {
+        font-size: 1.5rem;
+    }
+
+    /* Center the navbar items on small screens */
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%; /* Make each nav item full-width for small screens */
+    }
+}
+
+#full-name {
+    font-size: 2rem;
+}
+
+/* Align navbar items to the right for large screens */
+@media (min-width: 992px) {
+    .navbar-nav {
+        justify-content: flex-end;
+    }
+}
+
+
+
+/* Centering the name and making it large with a nice font */
+.name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    height: 100%;
+    /* Ensure this takes the full available height */
+    padding: 20px;
+    /* Add some padding to prevent text from touching the edges */
+}
+
+.name-style {
+    font-family: "Roboto Slab", serif;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #4a4a4a;
+}
+
+.subtitle {
+    font-family: "Arial", sans-serif;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Make the profile image container responsive */
+.profile-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 600px;
+    max-height: 500px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+
+
+
+/* Projects Section */
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure it takes the full screen height */
+    padding: 20px;
+    background-color: #f8f8f8;
+    /* Optional background color */
+}
+
+
+/* Center the section title */
+.section-title-projects {
+    font-family: "Roboto Slab", serif;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Center the row of project cards */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Add space between cards */
+}
+
+/* Ensure project cards are responsive */
+.card {
+    max-width: 300px;
+    width: 100%;
+    margin: 10px;
+}
+
+.card-img-wrapper {
+    padding-top: 75%;
+    /* Maintain aspect ratio for the image */
+    position: relative;
+}
+
+.card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .name-style {
+        font-size: 2.5rem;
+        /* Slightly smaller font on smaller screens */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-image-container img {
+        max-height: 40vh;
+        /* Adjust image size */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .section-title-projects {
+        font-size: 2.5rem;
+        /* Slightly smaller font on smaller screens */
+    }
+
+    .row {
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .name-style {
+        font-size: 2rem;
+        /* Further reduce the font size */
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .profile-image-container img {
+        max-height: 35vh;
+    }
+
+    .navbar .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .card-body .btn {
+        font-size: 0.9rem;
+        /* Reduce button font size on small screens */
+    }
+}
+
+
+/* Skills Section Styles */
+.skills-section {
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+}
+
+.skills-title {
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.skills-subtitle {
+    font-family: "Arial", sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.skills-card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skills-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation for image preview */
+.skills-image:hover {
+    transform: scale(1.2);
+}
+
+/* Fullscreen preview styles */
+.image-preview {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Show the preview when hovering */
+.skills-card:hover .image-preview {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.skills-card-body {
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.skills-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.skills-card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .skills-title {
+        font-size: 2rem;
+    }
+
+    .skills-subtitle {
+        font-size: 1rem;
+    }
+
+    .skills-card-title {
+        font-size: 1.3rem;
+    }
+
+    .skills-card-text {
+        font-size: 0.9rem;
+    }
+
+    .skills-list li {
+        font-size: 0.9rem;
+    }
+
+    .skills-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .skills-title {
+        font-size: 1.8rem;
+    }
+
+    .skills-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .skills-card-title {
+        font-size: 1.1rem;
+    }
+
+    .skills-card-text {
+        font-size: 0.8rem;
+    }
+
+    .skills-list li {
+        font-size: 0.8rem;
+    }
+
+    .skills-image {
+        height: 150px;
+    }
+}
+
+/* resume section */
+
+/* General Section Styling */
+#resume {
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+#resume .section-title-projects {
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#resume .text-muted {
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Button Group Styling */
+.btn-group {
+    margin-top: 40px;
+}
+
+.btn-group .btn {
+    font-size: 1.125rem;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 12px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-group .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-group .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-group .btn-outline-secondary {
+    background-color: transparent;
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-group .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Summary of Resume Styling */
+.resume-summary-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-summary-container ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.resume-summary-container ul li {
+    margin-bottom: 20px;
+}
+
+.resume-summary-container ul li strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.resume-summary-container ul li ul {
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+.resume-summary-container ul li ul li {
+    margin-bottom: 10px;
+}
+
+/* Styling for Languages Section */
+.resume-summary-container ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #resume .section-title-projects {
+        font-size: 2.5rem;
+    }
+
+    #resume .text-muted {
+        font-size: 1.125rem;
+    }
+
+    .btn-group .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+
+/* contact section */
+.contact-section-unique {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+
+.contact-title-unique {
+    font-family: "Roboto Slab", serif;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #4a4a4a;
+}
+
+.contact-subtitle-unique {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.row-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+    /* Ensures equal height for columns */
+}
+
+.col-contact-md-6 {
+    flex: 1 1 calc(50% - 20px);
+}
+
+/* Card Styles */
+.contact-card,
+.contact-icons-unique {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffffb0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+    /* Ensures equal card heights */
+}
+
+.contact-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #222;
+}
+
+.contact-form .contact-name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-input-container {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.contact-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #0056b3;
+}
+
+/* Icons Section */
+.contact-icons-container {
+    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns for a 2x2 grid */
+    /* Ensures proper spacing in the card */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns for a 2x2 grid */
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+.contact-icon-link {
+    display: flex;
+    flex-direction: column;
+    /* Stacks the icon and text */
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    /* Slightly larger text */
+    transition: color 0.3s ease;
+}
+
+.contact-icon-link:hover {
+    color: #007bff;
+}
+
+.contact-icon-unique {
+    font-size: 3rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row-contact {
+        flex-direction: grid;
+    }
+
+    .col-contact-md-6 {
+        flex: 1 1 100%;
+    }
+}
